@@ -1,6 +1,9 @@
 package model;
 
 import java.util.*;
+import control.*;
+import view.*;
+import data.*;
 
 public class Customer extends User {
 	private String firstName;
@@ -93,8 +96,10 @@ public class Customer extends User {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter product ID: ");
 		String choice1 = input.next();
-		shoppingCart.add(choice1);
-		//choice1.setAvailability = false;
+		ProductDB productList = new ProductDB();
+		//assign product list from the file to productList object
+		shoppingCart.add(productList.browseByProductID(choice1));
+		//.setAvailability = false;
 		
 	}	
 	
@@ -115,9 +120,6 @@ public class Customer extends User {
 		System.out.println("Product ID to be deleted: ");
 		postedItems.remove(choice);
 	}
-	
-	
-	
 	
 }
 
